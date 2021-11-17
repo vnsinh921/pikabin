@@ -1,16 +1,16 @@
-source 'https://gems.vccloud.vn'
-gem 'rails', '4.2.6'
-gem 'sqlite3', '1.3.11'
-gem 'jbuilder', '2.4.1'
+source 'https://rubygems.org/'
+gem 'rails', '6.1.4.1'
+gem 'sqlite3', '1.4.2'
+gem 'jbuilder', '2.11.3'
 
 group :development, :test do
-  gem 'pry', '0.10.3'
+  gem 'pry', '0.14.1'
 end
 
 group :development do
-  gem 'web-console', '~> 2.0'
-  gem 'spring', '1.7.1'
+  gem 'web-console', '4.1.0'
+  gem 'spring', '3.0.0'
 end
 
-gem 'puma', '3.4.0'
+gem 'puma', '5.5.2'
 gem 'encrypted_strings', '0.3.3'

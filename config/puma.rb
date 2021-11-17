@@ -1,4 +1,4 @@
-workers Integer(ENV['PUMA_WORKER'] || 2)
-threads 0, 16
+workers Integer(ENV['PUMA_WORKER'] || 0)
+threads 0, 2
 
-bind 'tcp://127.0.0.1:8080'
+bind 'tcp://0.0.0.0:8080'
