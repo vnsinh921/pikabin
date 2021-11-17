@@ -1,7 +1,8 @@
 class DocumentsController < ApplicationController
+#  before_action :set_document, only: [:show, :destroy]
   before_action :set_document, only: [:show, :destroy]
-  skip_before_filter :verify_authenticity_token, :only => [:create]
-
+#  skip_before_filter :verify_authenticity_token, :only => [:create]
+  skip_before_action :verify_authenticity_token, :only => [:create]
   rescue_from OpenSSL::Cipher::CipherError do |exception|
     message = "Decrypt fail #{params}"
     Rails.logger.error message
