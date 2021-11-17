@@ -24,7 +24,7 @@ RUn bundle exec rake db:migrate
 RUN bundle exec rake assets:precompile
 EXPOSE 8080
 #Entrypoint
-ENTRYPOINT ["/bin/sh","entrypoint.sh"]
+ENTRYPOINT ["/bin/bash","entrypoint.sh"]
 
 
 
