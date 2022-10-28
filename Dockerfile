@@ -17,8 +17,7 @@ COPY . /app
 
 #Install 
 ENV RAILS_ENV=development
-RUN bundle update activesupport && bundler install && dpkg -r --force-depends ruby-thor && gem install thor --version 1.1.0
-
+RUN bundle update activesupport && bundler install && dpkg -r --force-depends ruby-thor && gem install thor --version 1.1.0 && rm -rf /var/cache/* /tmp/* /var/log/*
 EXPOSE 8080
 #Entrypoint
 ENTRYPOINT ["/bin/bash","entrypoint.sh"]
