@@ -13,11 +13,11 @@ RUN apt-get install -y sqlite3 libsqlite3-dev ruby-bundler libgmp3-dev ruby ruby
 RUN bundle -v && bundler -v
 RUN mkdir -p /app
 WORKDIR /app
-COPY . /app
+COPY . /app 
 
 #Install 
 ENV RAILS_ENV=development
-RUN bundle update activesupport && bundler install && dpkg -r --force-depends ruby-thor && gem install thor --version 1.1.0 && rm -rf /var/cache/* /tmp/* /var/log/*
+RUN bundler install && dpkg -r --force-depends ruby-thor && gem install thor --version 1.1.0 && rm -rf /var/cache/* /tmp/* /var/log/*
 EXPOSE 8080
 #Entrypoint
 ENTRYPOINT ["/bin/bash","entrypoint.sh"]
