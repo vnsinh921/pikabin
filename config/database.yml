@@ -2,10 +2,10 @@ production:
   adapter: sqlite3
   pool: 5
   timeout: 5000
-  database: db/pikabin_production.sqlite3
+  database: db/sqlite/pikabin_production.sqlite3
 
 development:
   adapter: sqlite3
   pool: 5
   timeout: 5000
-  database: db/pikabin_development.sqlite3
+  database: db/sqlite/pikabin_development.sqlite3

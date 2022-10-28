@@ -29,7 +29,7 @@ development:
   adapter: sqlite3
   pool: 5
   timeout: 5000
-  database: db/pikabin_development.sqlite3
+  database: db/sqlite/pikabin_development.sqlite3
 
 # Migrate DB
 dpkg -r --force-depends ruby-thor && gem install thor
@@ -47,13 +47,14 @@ RUN on Docker
 docker build -t pikabin .
 # Docker run container
 docker run -d -p 8080:8080 --name pikabin pikabin:latest
+# or
+docker run -d -p 8080:8080 --volume $PIKA_HOME:/app/db/sqlite --name pikabin pikabin:latest
 ```
-
 API
 ---
 
 ```bash
-curl -X POST -H "content-type: application/json" -d '{ "document": { "content": "asdasdsd" } }' "http://localhost:8080"
+curl -X POST -H "content-type: application/json" -d '{ "document": { "content": "Insert content" } }' "http://localhost:8080"
 
 # Response
 {"message":"","uri":"http://localhost:8080/31037f223195e451e0ebe56e8e041d0c756bc"}
@@ -115,14 +116,14 @@ raw:
 
 ```bash
 curl https://pikab.in/936279c6f3.raw
-assasasss
+Insert content
 ```
 
 json:
 
 ```bash
 curl https://pikab.in/936279c6f3.json
-{"content_decrypted":"assasasss ","title":"","expired_at":"-1","syntax":"plain"}
+{"content_decrypted":"Insert content ","title":"","expired_at":"-1","syntax":"plain"}
 ```
 Source
 ------

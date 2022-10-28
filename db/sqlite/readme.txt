@@ -1,0 +1,2 @@
+production: pikabin_production.sqlite3
+development: pikabin_development.sqlite3
