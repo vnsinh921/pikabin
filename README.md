@@ -44,7 +44,9 @@ RUN on Docker
 -------------
 ```bash
 # Docker build image:
-docker build -t pikabin .
+docker build -t pikabin -f docker-file/alpine/3.16.2/Dockerfile .
+#or
+docker build -t pikabin -f docker-file/ubuntu/20.04/Dockerfile .
 # Docker run container
 docker run -d -p 8080:8080 --name pikabin pikabin:latest
 # or
